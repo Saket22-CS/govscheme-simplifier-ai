@@ -89,8 +89,6 @@ The system prompt instructs Gemini to:
 - Structure answers into clear sections
 - Suggest relevant schemes when users describe their situation
 
-📸 A screenshot/PDF of this prompt is included in the official submission as proof of AI Studio usage.
-
 ---
 
 ## 🖥️ User Interface Philosophy
@@ -110,7 +108,7 @@ Inspired by official Indian government portals:
 👉 https://govscheme-simplifier-ai.vercel.app/
 
 🎥 **Demo Video (≤ 3 minutes):**  
-👉 https://your-demo-video-link-here
+👉 [Video Link](https://www.awesomescreenshot.com/video/47573056?key=4249e20cd68ce55919a623531db2771a)
 
 ---
 
