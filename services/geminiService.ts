@@ -1,3 +1,4 @@
+
 import { GoogleGenAI } from "@google/genai";
 import { Language } from "../types";
 
@@ -29,6 +30,7 @@ export const fetchSchemeDetails = async (userQuery: string, language: Language):
       throw new Error("API Key is missing. Please check your environment configuration.");
     }
 
+    // Initialize GoogleGenAI with the API key from environment
     const ai = new GoogleGenAI({ apiKey });
     
     // Append language instruction dynamically
@@ -40,15 +42,17 @@ export const fetchSchemeDetails = async (userQuery: string, language: Language):
 
     const finalSystemInstruction = BASE_SYSTEM_INSTRUCTION + languageInstruction;
 
+    // Use gemini-3-flash-preview for basic text tasks as per developer guidelines
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3-flash-preview',
       contents: userQuery,
       config: {
         systemInstruction: finalSystemInstruction,
-        temperature: 0.5, // Lower temperature for more consistent formatting
+        temperature: 0.5,
       },
     });
 
+    // Access the text property directly from GenerateContentResponse
     if (response.text) {
       return response.text;
     } else {
